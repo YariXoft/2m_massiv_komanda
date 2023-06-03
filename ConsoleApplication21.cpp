@@ -53,7 +53,13 @@ void func_show(int** arr, int size) {
 		cout << endl;
 	}
 }
-
+void func_del_arr(int** arr, int size) {
+	for (size_t i = 0; i < size; i++)
+	{
+		delete[]  arr[i];
+	}
+	delete[]  arr;
+}
 int main()
 {
 	srand(time(NULL));
@@ -68,4 +74,6 @@ int main()
 	cout << "sum this arr is = " << func_sum(arr, size) << endl;
 	cout << "avg this arr is = " << func_avg(arr, size) << endl;
 
+
+	func_del_arr(arr, size);
 }
