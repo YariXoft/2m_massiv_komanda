@@ -81,11 +81,13 @@ int main()
     func_show(arr, size);
     cout << "sum this arr is = " << func_sum(arr, size) << endl;
     cout << "avg this arr is = " << func_avg(arr, size) << endl;
-
-    // findMin(A, len);
-    // findMax(A, len);
-    // mainDiagonal(A, len);
-    // secondaryDiagonal(A, len);
+    cout << "------------Anastasiya Changes--------" << endl;
+    cout << "------------START---------------------" << endl;
+    findMin(arr, size);
+    findMax(arr, size);
+    mainDiagonal(arr, size);
+    secondaryDiagonal(arr, size);
+    cout << "------------END-----------------------" << endl;
 
     func_del_arr(arr, size);
 }
