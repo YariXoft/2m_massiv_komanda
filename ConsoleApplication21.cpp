@@ -1,10 +1,55 @@
 #include <iostream>
+#include <fstream>
 #include <time.h>
 using namespace std;
 //Аркадий 
-int func_file() {
+
+void entryFile(int** arr, int size) {
+
+	string path = "myFile.txt";
+	ofstream fout;
+
+	fout.open(path);
+
+	if (!fout.is_open())
+	{
+		cout << "Error open file !";
+	}
+	else
+	{
+		cout << "Array written to file !\n";
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				fout << arr[i][j] << " ";
+			}
+			fout << endl;
+		}
+	}
+
+	fout.close();
+
+	ifstream fin;
+	fin.open(path);
+
+	if (!fin.is_open())
+	{
+		cout << "Error open file !";
+	}
+	else
+	{
+		cout << "File is open !\n\n";
+		char ch;
+		while (fin.get(ch))
+		{
+			cout << ch;
+		}
+		cout << endl;
+	}
+
+	fin.close();
 
 }
+
 void func_gen(int** arr, int size) {
 
 	for (int i = 0; i < size; i++)
@@ -73,6 +118,7 @@ int main()
 		arr[i] = new int[size];
 	func_gen(arr, size);
 	func_show(arr, size);
+	entryFile(arr, size);
 	cout << "sum this arr is = " << func_sum(arr, size) << endl;
 	cout << "avg this arr is = " << func_avg(arr, size) << endl;
 
