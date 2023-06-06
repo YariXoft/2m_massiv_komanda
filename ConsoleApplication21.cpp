@@ -3,10 +3,10 @@
 #include <time.h>
 using namespace std;
 
-void findMin(int **arr, int len);
-void findMax(int **arr, int len);
-void mainDiagonal(int **arr, int len);
-void secondaryDiagonal(int **arr, int len);
+void findMin(int** arr, int len);
+void findMax(int** arr, int len);
+void mainDiagonal(int** arr, int len);
+void secondaryDiagonal(int** arr, int len);
 
 void entryFile(int** arr, int size) {
 
@@ -53,7 +53,7 @@ void entryFile(int** arr, int size) {
     fin.close();
 
 }
-void func_gen(int **arr, int size)
+void func_gen(int** arr, int size)
 {
 
     for (int i = 0; i < size; i++)
@@ -65,7 +65,7 @@ void func_gen(int **arr, int size)
         }
     }
 }
-int func_sum(int **arr, int size)
+int func_sum(int** arr, int size)
 {
     int sum = 0;
     for (int i = 0; i < size; i++)
@@ -78,7 +78,7 @@ int func_sum(int **arr, int size)
     }
     return sum;
 }
-double func_avg(int **arr, int size)
+double func_avg(int** arr, int size)
 {
     int sum = 0;
     int c = 0;
@@ -95,7 +95,7 @@ double func_avg(int **arr, int size)
     avg = sum / (double)c;
     return avg;
 }
-void func_show(int **arr, int size)
+void func_show(int** arr, int size)
 {
     for (size_t i = 0; i < size; i++)
     {
@@ -106,7 +106,7 @@ void func_show(int **arr, int size)
         cout << endl;
     }
 }
-void func_del_arr(int **arr, int size)
+void func_del_arr(int** arr, int size)
 {
     for (size_t i = 0; i < size; i++)
     {
@@ -118,8 +118,8 @@ int main()
 {
     srand(time(NULL));
     int size = 8;
-    int **arr;
-    arr = new int *[size];
+    int** arr;
+    arr = new int* [size];
     for (int i = 0; i < size; i++)
         arr[i] = new int[size];
 
@@ -139,7 +139,7 @@ int main()
     func_del_arr(arr, size);
 }
 
-void findMin(int **arr, int len)
+void findMin(int** arr, int len)
 {
     int min = INFINITY;
 
@@ -157,7 +157,7 @@ void findMin(int **arr, int len)
     cout << "Min number is: " << min << endl;
 }
 
-void findMax(int **arr, int len)
+void findMax(int** arr, int len)
 {
     int max = -INFINITY;
 
@@ -175,7 +175,7 @@ void findMax(int **arr, int len)
     cout << "Max number is: " << max << endl;
 }
 
-void mainDiagonal(int **arr, int len)
+void mainDiagonal(int** arr, int len)
 {
     int sum = 0;
 
@@ -190,7 +190,7 @@ void mainDiagonal(int **arr, int len)
     cout << "Main diagonal sum is: " << sum << endl;
 }
 
-void secondaryDiagonal(int **arr, int len)
+void secondaryDiagonal(int** arr, int len)
 {
     int sum = 0;
 
